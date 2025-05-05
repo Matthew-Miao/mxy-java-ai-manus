@@ -17,7 +17,6 @@ package com.mxy.ai.manus.tool.browser;
 
 import com.mxy.ai.manus.ManusApplication;
 import com.mxy.ai.manus.config.ManusProperties;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import jakarta.annotation.PreDestroy;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -210,12 +209,6 @@ public class ChromeDriverService implements ApplicationRunner {
 			properties.put("navigator.webdriver", false);
 			options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
 
-//			// 自动匹配版本
-//			WebDriverManager.chromedriver().setup();
-			String property = System.getProperty("webdriver.chrome.driver");
-			log.info("========:{}", property);
-			log.info("========:{}", WebDriverManager.chromedriver().getDownloadedDriverPath());
-			log.info("========:{}", WebDriverManager.chromedriver().getDownloadedDriverVersion());
 			newDriver = new ChromeDriver(options);
 			executeAntiDetectionScript(newDriver);
 			log.info("Created new ChromeDriver instance with anti-detection");
