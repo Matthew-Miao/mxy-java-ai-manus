@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.mxy.ai.manus.config.McpServerConfigurationLoader
